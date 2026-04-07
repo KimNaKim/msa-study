@@ -28,7 +28,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-jar {
+jar {	// jar 파일 생성 비활성화
 	enabled = false
 }
 
