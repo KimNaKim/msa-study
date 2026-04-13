@@ -4,9 +4,10 @@ metadata:
   name: delivery-service
   namespace: metacoding
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: delivery
   ports:
     - port: 8084
       targetPort: 8084
+      nodePort: 30084

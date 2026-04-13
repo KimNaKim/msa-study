@@ -4,9 +4,10 @@ metadata:
   name: product-service
   namespace: metacoding
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: product
   ports:
     - port: 8082
       targetPort: 8082
+      nodePort: 30082

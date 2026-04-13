@@ -1,6 +1,7 @@
 package com.metacoding.order.adapter;
 
 import com.metacoding.order.adapter.dto.DeliveryRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
@@ -9,9 +10,9 @@ public class DeliveryClient {
 
     private final RestClient restClient;
 
-    public DeliveryClient(RestClient.Builder restClientBuilder) {
+    public DeliveryClient(RestClient.Builder restClientBuilder, @Value("${client.delivery.url}") String baseUrl) {
         this.restClient = restClientBuilder
-                .baseUrl("http://delivery-service:8084")
+                .baseUrl(baseUrl)
                 .build();
     }
 

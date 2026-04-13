@@ -4,9 +4,10 @@ metadata:
   name: user-service
   namespace: metacoding
 spec:
-  type: ClusterIP  # 내부 통신만 허용(기본값)
+  type: NodePort
   selector:
     app: user
   ports:
     - port: 8083
       targetPort: 8083
+      nodePort: 30083
